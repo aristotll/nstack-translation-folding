@@ -20,6 +20,8 @@
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
     on how to target different products -->
     <depends>com.intellij.modules.all</depends>
+    <!--depend on kotlin plugin-->
+    <depends optional="true">org.jetbrains.kotlin</depends>
 
     <application-components>
         <component>
@@ -29,6 +31,8 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <lang.foldingBuilder language="JAVA" implementationClass="com.nodes.folding.TranslationFoldingBuilder"/>
+        <!--add kotlin-->
+        <lang.foldingBuilder language="kotlin" implementationClass="com.nodes.folding.KtTranslationFoldingBuilder"/>
     </extensions>
 
     <actions>
